@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use Illuminate\Http\Request;
+use DB;
 
 class BrandController extends Controller
 {
@@ -16,11 +17,23 @@ class BrandController extends Controller
             'brand_description' => 'required|alpha'
         ]);
 
+        /*Elequent System*/
         $brand= new Brand();
         $brand->brand_name = $request->brand_name;
         $brand->brand_description = $request->brand_description;
         $brand->publication_status = $request->publication_status;
         $brand->save();
+
+        /*Query Builder*/
+        /*DB::table('brands')->insert([
+            'brand_name'=> $request->brand_name,
+            'brand_description'=> $request->brand_description,
+            'publication_status'=> $request->publication_status
+        ]);*/
+
+        /*Query Builder Shortcut Way*/
+        /*Brand::create($request->all());*/
+
         //return 'success';
         return redirect('add-brand')->with('message', 'Brand Added Successfully');
     }

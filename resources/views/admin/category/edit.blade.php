@@ -9,35 +9,55 @@
                 <div class="well">
                     <form name="editCategoryForm" action="{{ '/update-category' }}" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
+
                         <div class="form-group">
-                            <label class="control-label col-sm-3">Category Name</label>
-                            <div class="col-sm-9">
-                                <input value="{{ $categoryInfo->category_name }}" type="text" class="form-control" name="category_name"/>
-                                <input value="{{ $categoryInfo->id }}" type="hidden" class="form-control" name="category_id"/>
+                            <div class="container">
+                                <div class="row">
+                                    <label class="control-label col-sm-3">Category Name</label>
+                                    <div class="col-sm-9">
+                                        <input value="{{ $categoryInfo->category_name }}" type="text" class="form-control" name="category_name"/>
+                                        <input value="{{ $categoryInfo->id }}" type="hidden" class="form-control" name="category_id"/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3">Category Description</label>
-                            <div class="col-sm-9">
-                                <textarea class="form-control" name="category_description">{{ $categoryInfo->category_description }}</textarea>
+                            <div class="container">
+                                <div class="row">
+                                    <label class="col-sm-3">Category Description</label>
+                                    <div class="col-sm-9">
+                                        <textarea class="form-control" name="category_description">{{ $categoryInfo->category_description }}</textarea>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3">Publication Status</label>
-                            <div class="col-sm-9">
-                                <select name="publication_status" class="form-control">
-                                    <option>-- Select Publish Status--</option>
-                                    <option value="1">Published</option>
-                                    <option value="0">Unpublished</option>
-                                </select>
+                            <div class="container">
+                                <div class="row">
+                                    <label class="col-sm-3">Publication Status</label>
+                                    <div class="col-sm-9">
+                                        <select name="publication_status" class="form-control">
+                                            <option>-- Select Publish Status--</option>
+                                            <option value="1">Published</option>
+                                            <option value="0">Unpublished</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-sm-9 col-sm-offset-3">
-                                <input type="submit" class="btn btn-success btn-block" name="btn" value="Update Category Info"/>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-3">
+
+                                    </div>
+                                    <div class="col-sm-9 col-sm-offset-3">
+                                        <input type="submit" class="btn btn-success btn-block" name="btn" value="Update Category Info"/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

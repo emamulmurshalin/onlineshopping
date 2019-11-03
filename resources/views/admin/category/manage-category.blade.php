@@ -44,7 +44,7 @@
                             <td>{{ $category->publication_status==1 ? 'Published':'Unpublished' }}</td>
                             <td class="center">
                                 @if($category->publication_status==1)
-                                    <a href="{{ '/unpublished-category/'.$category->id }}" class="btn btn-success btn-xs" title="Published Category">
+                                    <a href="{{ '/unpublished-category/'.$category->id }}" class="btn btn-success btn-xs" title="Unpublished Category">
                                         <span><i class="fas fa-arrow-up"></i></span>
                                     </a>
                                 @else
